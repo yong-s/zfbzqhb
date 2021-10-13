@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <title>支付宝赚钱红包</title>
+
+    <link rel="icon" type="image/ico" href="images/icon.png">
+    <meta name="description" content="支付宝赚钱红包 - 领红包代替打赏">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #066cb7;
+            font-family: "Microsoft YaHei";
+            color: #fff;
+            font-size: 16px
+        }
+
+        body,
+        html {
+            height: 100%
+        }
+
+        a,
+        a:hover {
+            color: #666;
+            text-decoration: none
+        }
+
+        button,
+        input,
+        textarea {
+            font-family: "Microsoft YaHei";
+            font-size: 14px;
+            border: 0;
+            outline: 0
+        }
+
+        img,
+        video {
+            display: block
+        }
+
+        img {
+            vertical-align: middle
+        }
+
+        dd,
+        dl,
+        p {
+            margin: 0;
+            padding: 0
+        }
+
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        .flex-box {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex
+        }
+
+        .flex-col {
+            -webkit-box-direction: normal;
+            -webkit-box-orient: vertical;
+            -moz-flex-direction: column;
+            -webkit-flex-direction: column;
+            flex-direction: column
+        }
+
+        .flex-one {
+            -webkit-box-flex: 1;
+            -moz-flex-grow: 1;
+            -webkit-flex-grow: 1;
+            flex-grow: 1;
+            flex: 1
+        }
+
+        .flex-two {
+            -webkit-box-flex: 2;
+            -moz-flex-grow: 2;
+            -webkit-flex-grow: 2;
+            flex-grow: 2;
+            flex: 2
+        }
+
+        .flex-align {
+            -webkit-box-align: center;
+            -moz-align-items: center;
+            -webkit-align-items: center;
+            align-items: center
+        }
+
+        .flex-pack {
+            -webkit-box-pack: center;
+            -moz-justify-content: center;
+            -webkit-justify-content: center;
+            justify-content: center
+        }
+
+        .flex-wrap {
+            -webkit-flex-wrap: wrap;
+            -moz-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+            -o-flex-wrap: wrap;
+            flex-wrap: wrap
+        }
+
+        .bigbox .img img {
+            margin: 0 auto;
+            height: 100%
+        }
+
+        .oper_box {
+            padding-top: 20px
+        }
+
+        .copyBut {
+            width: 83%;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            margin: 0 auto 0
+        }
+
+        .copyBut p:first-child {
+            border-radius: 25px 0 0 25px;
+            background: #0d90ea;
+            color: #fffbfb;
+            display: inline-block;
+            padding: 0 5px 0 10px;
+            border: 3px solid #025ea7;
+            border-right: 0;
+            line-height: 30px
+        }
+
+        .copyBut p span {
+            font-size: 15px
+        }
+
+        .copyBut a {
+            background: #025ea7;
+            color: #ffff63;
+            display: inline-block;
+            border-radius: 0 30px 30px 0;
+            padding: 0 10px
+        }
+
+        .copyBut.stpe2 a {
+            border-radius: 30px
+        }
+
+        .cue {
+            text-align: center;
+            padding-top: 5px;
+            font-size: 12px;
+            color: #044070;
+            width: 60%;
+            margin: 0 auto
+        }
+
+        @media (max-width:374px) {
+
+            .copyBut,
+            .cue {
+                width: 70%;
+                font-size: 14px
+            }
+
+            .cue {
+                font-size: 12px
+            }
+
+            .copyBut a {
+                font-size: 14px
+            }
+        }
+
+        .download {
+            text-align: center
+        }
+
+        .download a {
+            display: inline-block;
+            background: #025ea7;
+            color: #fff;
+            border-radius: 20px;
+            height: 35px;
+            line-height: 35px;
+            padding: 0 30px;
+            margin: 10px auto
+        }
+
+        body .page-toolbar {
+            opacity: 0
+        }
+
+        .layer {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            background: rgba(0, 0, 0, .5);
+            font-size: 14px;
+            padding: 10px 20px;
+            color: #fff;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -150%);
+            display: none;
+            text-align: center
+        }
+
+        .bigbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            height: 100%;
+            overflow-y: scroll;
+            background: #0d90ea
+        }
+
+        .footImg {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bigbox"><br><br><br>
+        
+        <p style="height:15%" class="img"><img
+                src="images/Zfbicon.png"
+                alt=""></p><br>
+        <div style="height:20%" class="oper_box">
+            <div class="copyBut flex-box">
+                <p class="flex-two">红包口令：<span class="fq-shareapp-code">715450232</span></p><a
+                    data-clipboard-text="719371077" id="itemCopy" href="javascript:;" class="flex-one itemCopy">复制</a>
+            </div>
+            <h2 class="cue">复制口令在支付宝首页搜索即可领取红包<br>每天可免费领取一次<br>领取的红包在实体店支付宝付款时会自动抵扣<br>
+                <font style="color:#fff;font-size:30px;">最高可领取99元</font>
+            </h2><br><br>
+            <p class="layer">复制成功</p>
+        </div><br>
+        <p style="height:10%" class="download"><a id="function" href="https://d.alipay.com/"> 去打开支付宝首页搜索以上口令立即领红包 </a>
+        </p>
+        <h3 style="text-align: center;">建议以领红包代替打赏</h3>
+        <p style="padding:10px;"><img style="max-width:100%; margin: 0 auto;"
+                src="images/zfbhb.png">
+        </p>
+    </div>
+
+    <script type="text/javascript"
+        src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="assets/js/clipboard2.min.js"></script>
+
+    <script type="text/javascript">$(function () {
+            //downFn();
+            var androidUrl = 'https://d.alipay.com';
+            var iosUrl = 'alipay://';
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/iphone/i) == "iphone" || ua.match(/ipad/i) == "ipad") {
+                $(".download a").attr("href", iosUrl)
+            } else {
+                $(".download a").attr("href", androidUrl)
+            }
+        })
+        //复制文本
+        var clipboard = new Clipboard('.itemCopy');
+        clipboard.on('success', function (e) {
+            if ($(".itemCopy1").parents().hasClass('style1')) {
+                $(".layer").fadeIn().text("红包口令 复制成功")
+                setTimeout(function () {
+                    $(".layer").fadeOut()
+                },
+                    1500);
+            } else {
+                $(".layer").fadeIn().text("红包口令 复制成功")
+                setTimeout(function () {
+                    $(".layer").fadeOut()
+                },
+                    1500);
+                $(".style2 .stpe1").hide()
+                $(".style2 .stpe2").show()
+            }
+        });
+        clipboard.on('error', function (e) {
+            $(".layer").fadeIn().text("请手动复制框内内容")
+            setTimeout(function () {
+                $(".layer").fadeOut()
+            },
+                1500);
+        });
+
+        //获取口令
+        var koulin = "715450232";
+        $("#itemCopy").attr("data-clipboard-text", koulin);
+        $(".fq-shareapp-code").text(koulin);
+
+        //自动选中
+        var word = document.querySelector('.fq-shareapp-code');
+        document.addEventListener("selectionchange",
+            function (e) {
+                window.getSelection().selectAllChildren(word);
+            },
+            false);</script>
+
+
+</body>
+
+</html>
