@@ -306,8 +306,20 @@
             //downFn();
             var androidUrl = 'https://d.alipay.com';
             var iosUrl = 'alipay://';
+
             var ua = navigator.userAgent.toLowerCase();
-            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+            if (ua.match(/iphone/i) == "iphone" || ua.match(/ipad/i) == "ipad") {
+                $(".download a").attr("href", iosUrl)
+            }
+            else {
+                $(".download a").attr("href", androidUrl)
+            }
+
+        })
+        function weixinTip(ele) {
+            var ua = navigator.userAgent;
+            var isWeixin = !!/MicroMessenger/i.test(ua);
+            if (isWeixin) {
                 ele.onclick = function (e) {
                     window.event ? window.event.returnValue = false : e.preventDefault();
                     document.getElementById('JweixinTip').style.display = 'block';
@@ -315,16 +327,10 @@
                 document.getElementById('JweixinTip').onclick = function () {
                     this.style.display = 'none';
                 }
-            } else {
-                if (ua.match(/iphone/i) == "iphone" || ua.match(/ipad/i) == "ipad") {
-                    $(".download a").attr("href", iosUrl)
-                }
-                else {
-                    $(".download a").attr("href", androidUrl)
-                }
             }
-
-        })
+        }
+        var btn1 = document.getElementById('function');
+        weixinTip(btn1);
         //复制文本
         var clipboard = new Clipboard('.itemCopy');
         clipboard.on('success', function (e) {
